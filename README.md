@@ -13,3 +13,6 @@ require __DIR__.'/../../../../yii2/framework/yii.php';
  as  framework absolute or relative(www) path.
 
 
+Completed this project, contributed 7six bugs, #77, #80, #90, #105, #110, #124.
+
+Welcome you test.
