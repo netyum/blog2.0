@@ -8,7 +8,7 @@ blog for yii 2.0 public preview
 1. webserver document_root is www/
 2. modify www/index.php on line 
 ```
-require __DIR__.'/../../../../yii2/framework/yii.php';
+require 'yii2/framework/yii.php';
 ```
  as  framework absolute or relative(www) path.
 
