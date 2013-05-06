@@ -1,7 +1,7 @@
 blog2.0
 =======
 
-blog for yii 2.0 public view
+blog for yii 2.0 public preview
 
 ## Deployment
 
@@ -16,3 +16,8 @@ require __DIR__.'/../../../../yii2/framework/yii.php';
 Completed this project, contributed 6 bugs, #77, #80, #90, #105, #110, #124.
 
 Welcome you test.
+
+
+## Preview
+
+http://110.76.45.201/
