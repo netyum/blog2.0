@@ -20,9 +20,9 @@ return array(
 			'class' => 'yii\web\User',
 			'identityClass' => 'app\components\UserIdentity',
 		),
-        'assetManager' => array(
-            'bundles' => require(__DIR__ . '/assets.php'),
-        ),
+		'assetManager' => array(
+ 			'bundles' => require(__DIR__ . '/assets.php'),
+ 		),
 		'db' => array(
 			'class' => 'yii\db\Connection',
 			'dsn' => 'mysql:host=localhost;dbname=blog',
