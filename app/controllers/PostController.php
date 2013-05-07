@@ -85,6 +85,8 @@ class PostController extends WebController
 			->where('status='. Post::STATUS_PUBLISHED)
 			->orderBy('update_time DESC');
 
+		if (isset($_GET['tag']))
+			$query->andWhere('tags like :tag', array('tag'=>'%'.$_GET['tag'].'%'));
 		$countQuery = clone $query;
 		$pages = new Pagination($countQuery->count());
 		$pages->pageSize = 3;
