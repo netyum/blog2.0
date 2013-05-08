@@ -24,15 +24,15 @@ return array(
 		'assetManager' => array(
  			'bundles' => require(__DIR__ . '/assets.php'),
  		),
-        'urlManager'=>array(
+		'urlManager'=>array(
 			'class'=>'yii\web\UrlManager',
-            'enablePrettyUrl'=>true,
-            'rules'=>array(
-                'post/<id:\d+>/<title:.*?>'=>'post/view',
-                'posts/<tag:.*?>'=>'post/index',
-                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-            ),  
-        ),
+			'enablePrettyUrl'=>false,
+			'rules'=>array(
+				'post/<id:\d+>/<title:.*?>'=>'post/view',
+				'posts/<tag:.*?>'=>'post/index',
+				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+			),  
+		),
 		'db' => array(
 			'class' => 'yii\db\Connection',
 			'dsn' => 'mysql:host=localhost;dbname=blog',
@@ -42,20 +42,20 @@ return array(
 			'tablePrefix'=>'tbl_',
 			'enableSchemaCache'=> !YII_DEBUG,
 		),
-	    'log'=>array(
-            'class'=>'yii\logging\Router',
-            'targets'=>array(
-                'file' => array(
-                    'class'=>'yii\logging\FileTarget',
-                    'levels'=>'error, warning',
+		'log'=>array(
+			'class'=>'yii\logging\Router',
+			'targets'=>array(
+				'file' => array(
+					'class'=>'yii\logging\FileTarget',
+ 					'levels'=>'error, warning',
 					'categories' => 'yii\*',
-                ),  
-                // uncomment the following to show log messages on web pages
-                /*'web' => array(
+				),  
+				// uncomment the following to show log messages on web pages
+				/*'web' => array(
 					'class'=>'yii\logging\WebTarget',
-                ),*/
-            ),  
-        ),
+				),*/
+			),  
+ 		),
 	),
 
 	// application-level parameters that can be accessed
