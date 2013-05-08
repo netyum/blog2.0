@@ -47,8 +47,8 @@ return array(
 			'targets'=>array(
 				'file' => array(
 					'class'=>'yii\logging\FileTarget',
- 					'levels'=>'error, warning',
-					'categories' => 'yii\*',
+ 					'levels'=> array('error', 'warning'),
+					'categories' => array('yii\*'),
 				),  
 				// uncomment the following to show log messages on web pages
 				/*'web' => array(
