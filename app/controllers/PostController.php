@@ -89,8 +89,7 @@ class PostController extends WebController
 			$query->andWhere('tags like :tag', array('tag'=>'%'.$_GET['tag'].'%'));
 		$countQuery = clone $query;
 		$pages = new Pagination($countQuery->count());
-		$pages->pageSize = 3;
-		
+
 		$models = $query->offset($pages->offset)
 				->limit($pages->limit)
 				->all();

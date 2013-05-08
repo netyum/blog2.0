@@ -26,25 +26,17 @@ $this->beginPage();
 			<div class="navbar-inner">
 				<div class="container">
 					<?php 
-					$username = '';
-
-					if ( Yii::$app->user->identity instanceof app\models\User) {
-						$username = Yii::$app->user->identity->username;
-					}
-
-					$this->widget('app\widgets\Menu',array(
-						'htmlOptions'=>array(
-							'class'=>'nav'
-						),
-						'controller'=>$this->context,
-						'items'=>array(
-							array('label'=>'Home', 'url'=>array('post/index')),
-							array('label'=>'About', 'url'=>array('site/page', 'view'=>'about')),
-							array('label'=>'Contact', 'url'=>array('site/contact')),
-							array('label'=>'Login', 'url'=>array('site/login'), 'visible'=>Yii::$app->user->isGuest),
-							array('label'=>'Logout ('.Html::encode($username).')', 'url'=>array('site/logout'), 'visible'=>!Yii::$app->user->isGuest)
-						),
-					));?>
+					$this->widget('yii\widgets\Menu', array(
+											'options' => array('class' => 'nav'),
+											'items' => array(
+												array('label' => 'Home', 'url' => array('/post/index')),
+												array('label' => 'About', 'url'=>array('/site/page', 'view'=>'about')),
+												array('label' => 'Contact', 'url' => array('/site/contact')),
+												Yii::$app->user->isGuest ?
+													array('label' => 'Login', 'url' => array('/site/login')) :
+													array('label' => 'Logout (' . Yii::$app->user->identity->username .')' , 'url' => array('/site/logout')),
+											),
+					)); ?>
 				</div>
 			</div>
 		</div>
