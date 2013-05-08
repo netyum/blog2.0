@@ -28,7 +28,7 @@ class Portlet extends Widget
 	/**
 	 * @var array the HTML attributes for the portlet container tag.
 	 */
-	public $htmlOptions=array();
+	public $htmlOptions=array('class'=>'portlet');
 	/**
 	 * @var string the title of the portlet. Defaults to null.
 	 * When this is not set, Decoration will not be displayed.
@@ -42,11 +42,11 @@ class Portlet extends Widget
 	/**
 	 * @var string the CSS class for the portlet title tag. Defaults to 'portlet-title'.
 	 */
-	public $titleCssClass='modal-header';
+	public $titleCssClass='portlet-title';
 	/**
 	 * @var string the CSS class for the content container tag. Defaults to 'portlet-content'.
 	 */
-	public $contentCssClass='modal-body';
+	public $contentCssClass='portlet-body';
 	/**
 	 * @var boolean whether to hide the portlet when the body content is empty. Defaults to true.
 	 * @since 1.1.4
@@ -85,7 +85,7 @@ class Portlet extends Widget
 			return;
 		echo $this->_beginTag;
 		echo $content;
-		echo "</div>\n";
+		echo '</div>';
 		echo Html::endTag($this->tagName);
 	}
 
@@ -97,7 +97,7 @@ class Portlet extends Widget
 	{
 		if($this->title!==null)
 		{
-                        echo "<div class=\"{$this->titleCssClass}\">{$this->title}</div>\n";
+                        echo "<h4 class=\"{$this->titleCssClass}\">{$this->title}</h4>\n";
 		}
 	}
 

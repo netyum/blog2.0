@@ -44,6 +44,122 @@ body {
 }
 
 /* Customize the navbar links to be fill the entire space of the .navbar */
+.navbar .brand{
+	color: #000 !important;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.125);
+	font-weight: bold !important;
+}
+
+p.meta{
+	font-style: italic;
+	color: #808080;
+}
+
+p.tags{
+	line-height: 20px;
+}
+
+.portlet{
+	margin-bottom: 18px;
+}
+
+.portlet-title{
+	margin-bottom: 9px;
+}
+
+.label{
+	text-transform: uppercase;
+}
+
+@media only screen and (min-width: 980px) {
+	body{
+		padding-top: 60px;
+	}
+	
+	.container-fluid{
+		max-width: 970px;
+		margin: 0 auto;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	
+	#inner-footer{
+		padding: 0;
+	}
+	
+	#content{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.topbar-inner{
+		padding: 0;
+	}
+	
+	.topbar form.pull-right {
+		float: right;
+	}
+	
+	.navbar-form, .navbar-search {
+		margin-top: 6px;
+		margin-bottom: 0;
+	}
+	
+	.navbar-search{
+		padding-left: 0;
+	}
+	
+	.sidebar{
+		margin-top: 0 !important;
+	}
+	
+	.widget_search input{
+		width: 230px;
+	}
+	
+	.blog .hero-unit{
+		margin-top: 10px;
+	}
+	
+	.page-template-page-homepage-php .hero-unit,
+	.blog .hero-unit{
+		padding: 60px;
+	}
+	
+	.hero-unit h1 {
+		font-size: 60px;
+	}
+	
+	/* hide edit comment button and show on hover on desktop version */
+	.edit-comment{
+		display: none;
+	}
+	
+	.vcard:hover .edit-comment{
+		display: inline-block;
+	}
+	
+	#s{
+		width: 210px;
+		margin-bottom: 6px;
+	}
+	
+	.widget_search input{
+		width: 209px;
+	}
+	
+	.comment .vcard .comment-text{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/*
+.nav-container{
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .navbar .navbar-inner {
 	padding: 0;
 }
@@ -76,3 +192,4 @@ body {
 	border-right: 0;
 	border-radius: 0 3px 3px 0;
 }
+*/

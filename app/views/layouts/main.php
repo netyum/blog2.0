@@ -20,12 +20,11 @@ $this->beginPage();
 <div class="container" id="page">
 	<?php $this->beginBody(); ?>
 	<div class="masthead">
-		<h3 class="muted"><?php echo Html::encode(Yii::$app->name); ?></h3>
-
-		<div class="navbar">
+		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
-					<?php 
+					<?php
+					echo Html::a(Html::encode(Yii::$app->name), array('/'), array('class'=>'brand'));
 					$this->widget('yii\widgets\Menu', array(
 											'options' => array('class' => 'nav'),
 											'items' => array(
@@ -43,6 +42,12 @@ $this->beginPage();
 		<!-- /.navbar -->
 	</div>
 
+	<div class="clearfix row-fluid">
+		<div class="hero-unit">
+			<h1><?php echo Html::encode(Yii::$app->params['title']); ?></h1>
+			<p>Bootstrap theme.</p>
+		</div>
+	</div>
 	<?php $this->widget('yii\widgets\Breadcrumbs', array(
 		'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : array(),
 	));?><!-- breadcrumbs -->
@@ -50,6 +55,7 @@ $this->beginPage();
 	<?php echo $content; ?>
 
 	<div class="footer">
+		<hr>
 		<p>&copy; <?php echo Html::encode(Yii::$app->name);?> <?php echo date('Y'); ?></p>
 		<p>
 			<?php echo Yii::powered(); ?>
