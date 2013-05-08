@@ -13,7 +13,7 @@ require 'yii2/framework/yii.php';
  as  framework absolute or relative(www) path.
 
 
-Completed this project, contributed 6 bugs, [#77](https://github.com/yiisoft/yii2/issues/77), [#80](https://github.com/yiisoft/yii2/issues/80), [#90](https://github.com/yiisoft/yii2/issues/90), [#105](https://github.com/yiisoft/yii2/issues/105), [#110](https://github.com/yiisoft/yii2/issues/110), [#124](https://github.com/yiisoft/yii2/issues/124), [#177](https://github.com/yiisoft/yii2/issues/177).
+Completed this project, contributed 7 bugs, [#77](https://github.com/yiisoft/yii2/issues/77), [#80](https://github.com/yiisoft/yii2/issues/80), [#90](https://github.com/yiisoft/yii2/issues/90), [#105](https://github.com/yiisoft/yii2/issues/105), [#110](https://github.com/yiisoft/yii2/issues/110), [#124](https://github.com/yiisoft/yii2/issues/124), [#177](https://github.com/yiisoft/yii2/issues/177).
 
 Welcome your test.
 
