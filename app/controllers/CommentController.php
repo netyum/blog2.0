@@ -20,13 +20,13 @@ class CommentController extends Controller
 			'AccessControl' => array(
 				'class' => '\yii\web\AccessControl',
 				'rules' => array(
-		            array(
+					array(
 						'allow'=>true, // allow authenticated users to access all actions
-		                'roles'=>array('@'),
-		            ),  
-		            array(
+						'roles'=>array('@'),
+					),
+					array(
 						'allow'=>false
-		            ),
+					),
 				)
 			)
 		);

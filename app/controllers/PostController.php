@@ -1,11 +1,11 @@
 <?php
-use \yii\web\Controller as WebController;
+use \yii\web\Controller;
 use \yii\web\Pagination;
 
 use app\models\Post;
 use app\models\Comment;
 
-class PostController extends WebController
+class PostController extends Controller
 {
 	public $layout='column2';
 
@@ -19,18 +19,18 @@ class PostController extends WebController
 			'AccessControl' => array(
 				'class' => '\yii\web\AccessControl',
 				'rules' => array(
-		            array(
+					array(
 						'allow'=>true,
-		                'actions'=>array('index', 'view'),
+				                'actions'=>array('index', 'view'),
 						'roles'=>array('?')
-		            ),  
-		            array(
+		            		),
+					array(
 						'allow'=>true,
-		                'roles'=>array('@'),
-		            ),  
-		            array(
+				                'roles'=>array('@'),
+					),  
+					array(
 						'allow'=>false,  // deny all users
-		            ),
+					),
 				)
 			)
 		);

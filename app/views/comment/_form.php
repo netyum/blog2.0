@@ -1,10 +1,10 @@
 <?php
 use \yii\helpers\Html;
-
+use \yii\widgets\ActiveForm;
 ?>
 
 
-<?php $form = $this->beginWidget('\yii\widgets\ActiveForm'); ?>
+<?php $form = $this->beginWidget(ActiveForm::className()); ?>
 	<?php echo $form->field($model,'author')->textInput(); ?>
 	<?php echo $form->field($model,'email')->textInput(); ?>
 	<?php echo $form->field($model,'url')->textInput(); ?>

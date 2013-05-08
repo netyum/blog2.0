@@ -1,4 +1,6 @@
 <?php
+use app\widgets\LinkPager;
+
 $this->params['breadcrumbs']=array(
 	'Comments',
 );
@@ -15,7 +17,7 @@ foreach($models as $model) {
 ?>
 <div class='pagination'>
 <?php
-$this->widget('app\widgets\LinkPager', array('pages'=>$pages, 'header'=>''));
+$this->widget(LinkPager::className(), array('pages'=>$pages, 'header'=>''));
 ?>
 </div>
 

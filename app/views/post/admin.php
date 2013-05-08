@@ -1,5 +1,8 @@
 <?php
 use \yii\helpers\Html;
+
+use app\widgets\LinkPager;
+
 use app\models\Lookup;
 
 $this->params['breadcrumbs']=array(
@@ -60,7 +63,7 @@ $this->registerJs($deleteJS);
 </table>
 <div class='pagination'>
 <?php
-$this->widget('app\widgets\LinkPager', array('pages'=>$pages, 'header'=>''));
+$this->widget(LinkPager::className(), array('pages'=>$pages, 'header'=>''));
 ?>
 </div>
 

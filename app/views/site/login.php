@@ -2,6 +2,8 @@
 use \Yii;
 use \yii\helpers\Html;
 
+use \yii\widgets\ActiveForm;
+
 $this->title=Yii::$app->name . ' - Login';
 $this->params['breadcrumbs']=array(
 	'Login',
@@ -12,7 +14,7 @@ $this->params['breadcrumbs']=array(
 
 <p>Please fill out the following form with your login credentials:</p>
 
-<?php $form=$this->beginWidget('\yii\widgets\ActiveForm', array(
+<?php $form=$this->beginWidget(ActiveForm::className(), array(
 	'id'=>'login-form',
 	'options' => array('class' => 'form-horizontal')
 )); ?>

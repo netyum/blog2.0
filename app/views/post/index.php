@@ -1,6 +1,8 @@
 <?php
 use \yii\helpers\Html;
 
+use app\widgets\LinkPager;
+
 foreach($models as $post) {
 	echo $this->context->renderPartial('_view', array(
 		'data'=>$post,
@@ -9,6 +11,6 @@ foreach($models as $post) {
 ?>
 <div class='pagination'>
 <?php
-$this->widget('app\widgets\LinkPager', array('pages'=>$pages, 'header'=>''));
+$this->widget(LinkPager::className(), array('pages'=>$pages, 'header'=>''));
 ?>
 </div>

@@ -2,6 +2,9 @@
 use \Yii;
 use \yii\web\Controller;
 
+use \yii\web\CaptchaAction;
+use app\actions\ViewAction;
+
 use app\models\ContactForm;
 use app\models\LoginForm;
 
@@ -15,10 +18,13 @@ class SiteController extends Controller
 	public function actions()
 	{
 		return array(
+			'captcha' => array(
+				'class' => CaptchaAction::className(),
+			),
 			// page action renders "static" pages stored under 'protected/views/site/pages'
 			// They can be accessed via: index.php?r=site/page&view=FileName
 			'page'=>array(
-				'class'=>'app\actions\ViewAction',
+				'class'=> ViewAction::className(),
 			),
 		);
 	}

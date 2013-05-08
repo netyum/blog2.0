@@ -2,6 +2,9 @@
 use \Yii;
 use \yii\helpers\Html;
 
+use \yii\widgets\Menu;
+use \yii\widgets\Breadcrumbs;
+
 $this->registerAssetBundle('app');
 $this->beginPage();
 ?>
@@ -25,7 +28,7 @@ $this->beginPage();
 				<div class="container">
 					<?php
 					echo Html::a(Html::encode(Yii::$app->name), array('/'), array('class'=>'brand'));
-					$this->widget('yii\widgets\Menu', array(
+					$this->widget(Menu::className(), array(
 											'options' => array('class' => 'nav'),
 											'items' => array(
 												array('label' => 'Home', 'url' => array('/post/index')),
@@ -48,7 +51,7 @@ $this->beginPage();
 			<p>Bootstrap theme.</p>
 		</div>
 	</div>
-	<?php $this->widget('yii\widgets\Breadcrumbs', array(
+	<?php $this->widget(Breadcrumbs::className(), array(
 		'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : array(),
 	));?><!-- breadcrumbs -->
 

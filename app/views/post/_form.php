@@ -1,10 +1,12 @@
 <?php
 use \yii\helpers\Html;
 
+use \yii\widgets\ActiveForm;
+
 use app\models\Lookup;
 ?>
 
-<?php $form = $this->beginWidget('\yii\widgets\ActiveForm', array(
+<?php $form = $this->beginWidget(ActiveForm::className(), array(
 	'options' => array('class' => 'form-horizontal'),
 	'fieldConfig' => array('inputOptions' => array('class' => 'input-xlarge')),
 )); ?>

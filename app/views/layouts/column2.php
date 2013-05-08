@@ -1,6 +1,10 @@
 <?php
 use \Yii;
 
+use app\widgets\UserMenu;
+use app\widgets\TagCloud;
+use app\widgets\RecentComments;
+
 $this->beginContent('@app/views/layouts/main.php'); ?>
 <div class="container-fluid">
   <div class="row-fluid">
@@ -8,13 +12,13 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
       <?php echo $content; ?>
     </div>
     <div class="span3">
-      <?php if(!Yii::$app->user->isGuest) $this->widget('app\widgets\UserMenu'); ?>
+      <?php if(!Yii::$app->user->isGuest) $this->widget(UserMenu::className()); ?>
 	
-      <?php $this->widget('app\widgets\TagCloud', array(
+      <?php $this->widget(TagCloud::className(), array(
           'maxTags'=>Yii::$app->params['tagCloudCount'],
       )); ?>
 
-      <?php $this->widget('app\widgets\RecentComments', array(
+      <?php $this->widget(RecentComments::className(), array(
           'maxComments'=>Yii::$app->params['recentCommentCount'],
       )); ?>
     </div>
