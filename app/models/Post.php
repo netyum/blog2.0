@@ -92,7 +92,7 @@ class Post extends ActiveRecord
 	{
 		$links=array();
 		foreach(Tag::string2array($this->tags) as $tag)
-			$links[]=Html::a(Html::encode($tag), array('post/index', 'tag'=>$tag));
+			$links[]=Html::a(Html::encode($tag), array('post/index', 'tag'=>$tag), array('class'=>'label'));
 		return $links;
 	}
 
