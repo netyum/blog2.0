@@ -1,6 +1,9 @@
 <?php
 $this->params['breadcrumbs']=array(
-	'Comments'=>array('index'),
+	array(
+		'label'=>'Comments',
+		'url'=>array('index')
+	),
 	'Update Comment #'.$model->id,
 );
 ?>

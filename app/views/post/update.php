@@ -2,7 +2,10 @@
 use \yii\helpers\Html;
 
 $this->params['breadcrumbs']=array(
-	$model->title=>$model->url,
+	array(
+		'label' => $model->title,
+		'url' => $model->url
+	),
 	'Update',
 );
 ?>

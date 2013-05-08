@@ -3,7 +3,8 @@ use \yii\helpers\Html;
 use app\models\Comment;
 
 $deleteJS = <<<DEL
-$('.container').on('click','.time a.delete',function() {
+$('.container').on('click','.op a.delete',function() {
+	alert(1);
 	var th=$(this),
 		container=th.closest('div.comment'),
 		id=container.attr('id').slice(1);
@@ -23,7 +24,7 @@ DEL;
 $this->registerJs($deleteJS);
 ?>
 
-<div class="row-fluid" id="c<?php echo $data->id; ?>">
+<div class="row-fluid comment" id="c<?php echo $data->id; ?>">
 
 	<?php echo Html::a("#{$data->id}", $data->url, array(
 		'class'=>'cid',
@@ -35,7 +36,7 @@ $this->registerJs($deleteJS);
 		<?php echo Html::a(Html::encode($data->post->title), $data->post->url); ?>
 	<p>
 
-	<p>
+	<p class="op">
 		<?php if($data->status==Comment::STATUS_PENDING): ?>
 			<span class="pending">Pending approval</span> |
 			<?php echo Html::a('Approve', array('comment/approve','id'=>$data->id), array('class'=>'approve')); ?> |

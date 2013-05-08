@@ -26,7 +26,7 @@ return array(
  		),
 		'urlManager'=>array(
 			'class'=>'yii\web\UrlManager',
-			'enablePrettyUrl'=>false,
+			'enablePrettyUrl'=>true,
 			'rules'=>array(
 				'post/<id:\d+>/<title:.*?>'=>'post/view',
 				'posts/<tag:.*?>'=>'post/index',

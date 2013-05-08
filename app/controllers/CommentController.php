@@ -36,9 +36,9 @@ class CommentController extends Controller
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionUpdate()
+	public function actionUpdate($id)
 	{
-		$model=$this->loadModel();
+		$model=$this->loadModel($id);
 		if ($this->populate($_POST, $model) && $model->save()) {
 			Yii::$app->response->redirect(array('index'));
 		}
@@ -51,18 +51,20 @@ class CommentController extends Controller
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'index' page.
 	 */
-	public function actionDelete()
+	public function actionDelete($id)
 	{
 		if(Yii::$app->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
-			$this->loadModel()->delete();
+			$this->loadModel($id)->delete();
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_POST['ajax']))
 				Yii::$app->response->redirect(array('index'));
 		}
-		else
+		else {
+			echo 'ddd';exit;
 			throw new \yii\base\HttpException(400,'Invalid request. Please do not repeat this request again.');
+		}
 	}
 
 	/**
@@ -86,9 +88,9 @@ class CommentController extends Controller
 		));
 	}
 
-	public function actionApprove()
+	public function actionApprove($id)
 	{
-		$comment=$this->loadModel();
+		$comment=$this->loadModel($id);
 		$comment->approve();
 		Yii::$app->response->redirect(array('index'));
 	}
@@ -97,12 +99,12 @@ class CommentController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 */
-	public function loadModel()
+	public function loadModel($id='')
 	{
 		if($this->_model===null)
 		{
-			if(isset($_GET['id']))
-				$this->_model=Comment::find($_GET['id']);
+			if(!empty($id))
+				$this->_model=Comment::find($id);
 			if($this->_model===null)
 				throw new \yii\base\HttpException(404,'The requested page does not exist.');
 		}

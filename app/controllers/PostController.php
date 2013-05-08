@@ -36,9 +36,9 @@ class PostController extends WebController
 		);
 	}
 
-	public function actionView()
+	public function actionView($id='')
 	{
-		$model=$this->loadModel();
+		$model=$this->loadModel($id);
 		$comment=$this->newComment($model);
 		echo $this->render('view',array(
 			'model'=>$model,
@@ -58,9 +58,9 @@ class PostController extends WebController
 		));
 	}
 
-	public function actionUpdate()
+	public function actionUpdate($id)
 	{
-		$model=$this->loadModel();
+		$model=$this->loadModel($id);
 		if ($this->populate($_POST, $model) && $model->save()) {
 			Yii::$app->response->redirect(array('view','id'=>$model->id));
 		}
@@ -70,23 +70,23 @@ class PostController extends WebController
 		));
 	}
 
-	public function actionDelete()
+	public function actionDelete($id)
 	{
 		// we only allow deletion via POST request
-		$this->loadModel()->delete();
+		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		Yii::$app->response->redirect(array('index'));
 	}
 
-	public function actionIndex()
+	public function actionIndex($tag='')
 	{
 		$query = Post::find()
 			->where('status='. Post::STATUS_PUBLISHED)
 			->orderBy('update_time DESC');
 
-		if (isset($_GET['tag']))
-			$query->andWhere('tags like :tag', array('tag'=>'%'.$_GET['tag'].'%'));
+		if (!empty($tag))
+			$query->andWhere('tags like :tag', array('tag'=>'%'.$tag.'%'));
 		$countQuery = clone $query;
 		$pages = new Pagination($countQuery->count());
 
@@ -126,11 +126,11 @@ class PostController extends WebController
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 */
-	public function loadModel()
+	public function loadModel($id='')
 	{
 		if($this->_model===null)
 		{
-			if(isset($_GET['id']))
+			if(!empty($id))
 			{
 				if(Yii::$app->user->isGuest)
 					$where='status='.Post::STATUS_PUBLISHED.' OR status='.Post::STATUS_ARCHIVED;
@@ -138,10 +138,10 @@ class PostController extends WebController
 					$where='';
 					
 				if ($where == '') {
-					$this->_model=Post::find($_GET['id']);
+					$this->_model=Post::find($id);
 				}
 				else {
-					$this->_model=Post::find()->where('id=:id AND '. $where, array('id'=>$_GET['id']))->one();
+					$this->_model=Post::find()->where('id=:id AND '. $where, array('id'=>$id))->one();
 				}
 			}
 			if($this->_model===null)
