@@ -4,7 +4,6 @@ use app\models\Comment;
 
 $deleteJS = <<<DEL
 $('.container').on('click','.op a.delete',function() {
-	alert(1);
 	var th=$(this),
 		container=th.closest('div.comment'),
 		id=container.attr('id').slice(1);
