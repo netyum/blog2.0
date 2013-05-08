@@ -86,7 +86,7 @@ class PostController extends WebController
 			->orderBy('update_time DESC');
 
 		if (!empty($tag))
-			$query->andWhere('tags like :tag', array('tag'=>'%'.$tag.'%'));
+			$query->andWhere(array('like', 'tags', '%'.$tag.'%'));
 		$countQuery = clone $query;
 		$pages = new Pagination($countQuery->count());
 
