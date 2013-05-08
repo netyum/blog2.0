@@ -19,9 +19,9 @@ $this->params['breadcrumbs']=array(
 
 	<?php echo $form->field($model,'username')->textInput(); ?>
 	<?php echo $form->field($model,'password')->passwordInput(); ?>
-	<p>
+	<div class="controls">
 		Hint: You may login with <tt>demo/demo</tt>.
-	</p>
+	</div>
 	<?php echo $form->field($model, 'rememberMe')->checkbox(); ?>
 	<div class="form-actions">
 		<?php echo Html::submitButton('Login', null, null, array('class' => 'btn btn-primary')); ?>

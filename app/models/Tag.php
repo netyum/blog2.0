@@ -114,18 +114,20 @@ class Tag extends ActiveRecord
 
 	public static function addTags($tags)
 	{
-		$inTags = preg_replace('/(\S+)/i', '\'\1\'', $tags);
 		
-		$sql = "UPDATE {{%tag}} SET frequency=frequency+1 WHERE name IN (". join(",", $inTags) .' ) '; 
-		Yii::$app->db->createCommand($sql)->execute();
+		if (count($tags) >0) {
+			$inTags = preg_replace('/(\S+)/i', '\'\1\'', $tags);
+			$sql = "UPDATE {{%tag}} SET frequency=frequency+1 WHERE name IN (". join(",", $inTags) .' ) ';
+			Yii::$app->db->createCommand($sql)->execute();
 		
-		foreach($tags as $name) {
-			$model = static::find()->where('name=:name',array(':name'=>$name))->one();
-			if ($model === null) {
-				$tag=new Tag();
-				$tag->name=$name;
-				$tag->frequency=1;
-				$tag->save();
+			foreach($tags as $name) {
+				$model = static::find()->where('name=:name',array(':name'=>$name))->one();
+				if ($model === null) {
+					$tag=new Tag();
+					$tag->name=$name;
+					$tag->frequency=1;
+					$tag->save();
+				}
 			}
 		}
 	}

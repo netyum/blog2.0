@@ -42,8 +42,8 @@ $this->beginPage();
 		<!-- /.navbar -->
 	</div>
 
-	<?php $this->widget('app\widgets\Breadcrumbs', array(
-		'links'=>$this->params['breadcrumbs'],
+	<?php $this->widget('yii\widgets\Breadcrumbs', array(
+		'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : array(),
 	));?><!-- breadcrumbs -->
 
 	<?php echo $content; ?>
