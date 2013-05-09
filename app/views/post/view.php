@@ -3,14 +3,20 @@ use \yii\helpers\Html;
 use \Yii;
 ?>
 
-<?php echo $this->context->renderPartial('_view', array(
+<?php 
+$commentCount = 0;
+if (is_object($model->comments)) $commentCount=$model->comments->count();
+
+echo $this->context->renderPartial('_view', array(
 	'data'=>$model,
+	'commentCount'=>$commentCount
 )); ?>
 
 <div id="comments" class="row-fluid">
-	<?php if($model->commentCount>=1): ?>
+	<?php
+	if($commentCount>=1): ?>
 		<h3>
-			<?php echo $model->commentCount>1 ? $model->commentCount . ' comments' : 'One comment'; ?>
+			<?php echo $commentCount>1 ? $commentCount . ' comments' : 'One comment'; ?>
 		</h3>
 
 		<?php echo $this->context->renderPartial('_comments',array(

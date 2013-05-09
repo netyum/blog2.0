@@ -3,9 +3,9 @@ use \yii\helpers\Html;
 
 use app\widgets\LinkPager;
 
-foreach($models as $post) {
+foreach($models as $model) {
 	echo $this->context->renderPartial('_view', array(
-		'data'=>$post,
+		'data'=>$model,
 	));
 }
 ?>

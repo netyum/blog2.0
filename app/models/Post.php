@@ -39,12 +39,6 @@ class Post extends ActiveRecord
 	}
 
 
-	public function getCommentCount() {
-		
-		return $this->hasMany('Comment', array('post_id' => 'id'))
-		            ->count();
-	}
-	
 	public function getComments() {
 		
 		return $this->hasMany('Comment', array('post_id' => 'id'))

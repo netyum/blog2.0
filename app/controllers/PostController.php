@@ -92,6 +92,7 @@ class PostController extends Controller
 
 		$models = $query->offset($pages->offset)
 				->limit($pages->limit)
+				->with('comments', 'author')
 				->all();
 
 		echo $this->render('index', array(

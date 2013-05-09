@@ -1,5 +1,10 @@
 <?php 
 use \yii\helpers\Html;
+
+if (!isset($commentCount)) {
+	$commentCount = 0;
+	if (is_object($data->comments)) $commentCount=$model->comments->count();
+}
 ?>
 <div class="row-fluid">
 	<div class="page-header">
@@ -17,7 +22,7 @@ use \yii\helpers\Html;
 			<?php echo implode(' ', $data->tagLinks); ?>
 		</p>
 		<?php echo Html::a('Permalink', $data->url); ?> |
-		<?php echo Html::a("Comments ({$data->commentCount})",$data->url.'#comments'); ?> |
+		<?php echo Html::a("Comments ({$commentCount})",$data->url.'#comments'); ?> |
 		Last updated on <?php echo date('F j, Y',$data->update_time); ?>
 	</div>
 </div>
