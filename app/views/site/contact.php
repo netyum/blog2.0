@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\widgets\Captcha;
 
-$this->title = 'Contact Us';
+$this->title = Yii::$app->name . ' - Contact Us';
 
 $this->params['breadcrumbs']=array(
     'Contact',
@@ -11,7 +11,7 @@ $this->params['breadcrumbs']=array(
 
 ?>
 
-<h1><?php echo Html::encode($this->title); ?></h1>
+<h1>Contact Us</h1>
 
 <?php if(Yii::$app->session->hasFlash('contact')): ?>
 <div class="alert alert-success">
