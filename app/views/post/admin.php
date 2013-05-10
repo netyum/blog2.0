@@ -42,10 +42,10 @@ $this->registerJs($deleteJS);
 		<td><?php echo date("Y/m/d", $model->create_time);?></td>
 		<td>
 			<?php
-				echo Html::a("Update", array("update", "id"=>$model->id)); 
+				echo Html::a(NULL, array("update", "id"=>$model->id), array('class' => 'icon icon-edit')); 
 			?> |
 			<?php
-				echo Html::a("Delete", array("delete", "id"=>$model->id), array('class'=>'delete'));
+				echo Html::a(NULL, array("delete", "id"=>$model->id), array('class'=>'delete icon icon-trash'));
 			?>
 		<td>
 	</tr>
