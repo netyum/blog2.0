@@ -88,16 +88,16 @@ class PostController extends Controller
 		if (!empty($tag))
 			$query->andWhere(array('like', 'tags', '%'.$tag.'%'));
 		$countQuery = clone $query;
-		$pages = new Pagination($countQuery->count());
+		$pagination = new Pagination($countQuery->count());
 
-		$models = $query->offset($pages->offset)
-				->limit($pages->limit)
+		$models = $query->offset($pagination->offset)
+				->limit($pagination->limit)
 				->with('comments', 'author')
 				->all();
 
 		echo $this->render('index', array(
 				'models' => $models,
-				'pages' => $pages,
+				'pagination' => $pagination,
 			));
 	}
 
@@ -111,15 +111,15 @@ class PostController extends Controller
 			->orderBy('create_time DESC');
 
 		$countQuery = clone $query;
-		$pages = new Pagination($countQuery->count());
+		$pagination = new Pagination($countQuery->count());
 		
-		$models = $query->offset($pages->offset)
-				->limit($pages->limit)
+		$models = $query->offset($pagination->offset)
+				->limit($pagination->limit)
 				->all();
 
 		echo $this->render('admin', array(
 				'models' => $models,
-				'pages' => $pages,
+				'pagination' => $pagination,
 			));
 	}
 

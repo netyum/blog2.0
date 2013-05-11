@@ -1,7 +1,6 @@
 <?php
 use \yii\helpers\Html;
-
-use app\widgets\LinkPager;
+use \yii\widgets\LinkPager;
 
 use app\models\Lookup;
 
@@ -61,9 +60,7 @@ $this->registerJs($deleteJS);
 	}
 	?>
 </table>
-<div class='pagination'>
 <?php
-$this->widget(LinkPager::className(), array('pages'=>$pages, 'header'=>''));
+$this->widget(LinkPager::className(), array('pagination'=>$pagination));
 ?>
-</div>
 

@@ -1,5 +1,5 @@
 <?php
-use app\widgets\LinkPager;
+use \yii\widgets\LinkPager;
 
 $this->params['breadcrumbs']=array(
 	'Comments',
@@ -14,10 +14,5 @@ foreach($models as $model) {
 		'data'=>$model,
 	));
 }
-?>
-<div class='pagination'>
-<?php
-$this->widget(LinkPager::className(), array('pages'=>$pages, 'header'=>''));
-?>
-</div>
+$this->widget(LinkPager::className(), array('pagination'=>$pagination));
 

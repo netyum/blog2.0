@@ -1,7 +1,7 @@
 <?php
 use \yii\helpers\Html;
 
-use app\widgets\LinkPager;
+use \yii\widgets\LinkPager;
 
 $this->title=Yii::$app->name . ' - Post';
 
@@ -15,9 +15,6 @@ foreach($models as $model) {
 		'data'=>$model,
 	));
 }
+
+$this->widget(LinkPager::className(), array('pagination'=>$pagination));
 ?>
-<div class='pagination'>
-<?php
-$this->widget(LinkPager::className(), array('pages'=>$pages, 'header'=>''));
-?>
-</div>
