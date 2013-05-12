@@ -16,5 +16,5 @@ foreach($models as $model) {
 	));
 }
 
-$this->widget(LinkPager::className(), array('pagination'=>$pagination));
+echo LinkPager::widget($this, array('pagination'=>$pagination));
 ?>

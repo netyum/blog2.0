@@ -12,13 +12,13 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
       <?php echo $content; ?>
     </div>
     <div class="span3">
-      <?php if(!Yii::$app->user->isGuest) $this->widget(UserMenu::className()); ?>
+      <?php if(!Yii::$app->user->isGuest) echo UserMenu::widget($this); ?>
 	
-      <?php $this->widget(TagCloud::className(), array(
+      <?php echo TagCloud::widget($this, array(
           'maxTags'=>Yii::$app->params['tagCloudCount'],
       )); ?>
 
-      <?php $this->widget(RecentComments::className(), array(
+      <?php echo RecentComments::widget($this, array(
           'maxComments'=>Yii::$app->params['recentCommentCount'],
       )); ?>
     </div>

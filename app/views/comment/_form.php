@@ -4,7 +4,10 @@ use \yii\widgets\ActiveForm;
 ?>
 
 
-<?php $form = $this->beginWidget(ActiveForm::className()); ?>
+<?php $form = ActiveForm::begin($this, array(
+	'options' => array('class' => 'form-horizontal'),
+	'fieldConfig' => array('inputOptions' => array('class' => 'input-xlarge')),
+)); ?>
 	<?php echo $form->field($model,'author')->textInput(); ?>
 	<?php echo $form->field($model,'email')->textInput(); ?>
 	<?php echo $form->field($model,'url')->textInput(); ?>
@@ -13,4 +16,4 @@ use \yii\widgets\ActiveForm;
 		<?php echo Html::submitButton('Save', null, null, array('class' => 'btn btn-primary')); ?>
 	</div>
 
-<?php $this->endWidget(); ?>
+<?php ActiveForm::end(); ?>

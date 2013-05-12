@@ -6,7 +6,7 @@ use \yii\widgets\ActiveForm;
 use app\models\Lookup;
 ?>
 
-<?php $form = $this->beginWidget(ActiveForm::className(), array(
+<?php $form = ActiveForm::begin($this, array(
 	'options' => array('class' => 'form-horizontal'),
 	'fieldConfig' => array('inputOptions' => array('class' => 'input-xlarge')),
 )); ?>
@@ -20,4 +20,4 @@ use app\models\Lookup;
 		<?php echo Html::submitButton($model->isNewRecord ? 'Create' : 'Save', null, null, array('class' => 'btn btn-primary')); ?>
 	</div>
 
-<?php $this->endWidget(); ?>
+<?php ActiveForm::end() ?>

@@ -14,7 +14,7 @@ $this->params['breadcrumbs']=array(
 
 <p>Please fill out the following form with your login credentials:</p>
 
-<?php $form=$this->beginWidget(ActiveForm::className(), array(
+<?php $form=ActiveForm::begin($this, array(
 	'id'=>'login-form',
 	'options' => array('class' => 'form-horizontal')
 )); ?>
@@ -28,4 +28,4 @@ $this->params['breadcrumbs']=array(
 	<div class="form-actions">
 		<?php echo Html::submitButton('Login', null, null, array('class' => 'btn btn-primary')); ?>
 	</div>
-<?php $this->endWidget(); ?>
+<?php ActiveForm::end(); ?>
