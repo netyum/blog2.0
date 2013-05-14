@@ -62,7 +62,6 @@ class CommentController extends Controller
 				Yii::$app->response->redirect(array('index'));
 		}
 		else {
-			echo 'ddd';exit;
 			throw new \yii\base\HttpException(400,'Invalid request. Please do not repeat this request again.');
 		}
 	}

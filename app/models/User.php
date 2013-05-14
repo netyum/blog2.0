@@ -1,5 +1,7 @@
 <?php
 namespace app\models;
+
+use \Yii;
 use \yii\db\ActiveRecord;
 
 class User extends ActiveRecord
@@ -73,7 +75,7 @@ class User extends ActiveRecord
 	protected function generateSalt($cost=10)
 	{
 		if(!is_numeric($cost)||$cost<4||$cost>31){
-			throw new CException(Yii::t('Cost parameter must be between 4 and 31.'));
+			throw new \yii\base\Exception(Yii::t('Cost parameter must be between 4 and 31.'));
 		}
 		// Get some pseudo-random data from mt_rand().
 		$rand='';
