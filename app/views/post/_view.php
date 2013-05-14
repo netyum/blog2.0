@@ -3,7 +3,7 @@ use \yii\helpers\Html;
 
 if (!isset($commentCount)) {
 	$commentCount = 0;
-	if (is_object($data->comments)) $commentCount=$model->comments->count();
+	if (count($data->comments) > 0 ) $commentCount=count($data->comments);
 }
 ?>
 <div class="row-fluid">

@@ -5,8 +5,7 @@ use \Yii;
 
 <?php 
 $commentCount = 0;
-if (is_object($model->comments)) $commentCount=$model->comments->count();
-
+if (count($model->comments) > 0 ) $commentCount=count($model->comments);
 echo $this->context->renderPartial('_view', array(
 	'data'=>$model,
 	'commentCount'=>$commentCount

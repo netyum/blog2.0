@@ -36,7 +36,7 @@ class PostController extends Controller
 		);
 	}
 
-	public function actionView($id='')
+	public function actionView($id)
 	{
 		$model=$this->loadModel($id);
 		$comment=$this->newComment($model);
@@ -142,7 +142,7 @@ class PostController extends Controller
 					$this->_model=Post::find($id);
 				}
 				else {
-					$this->_model=Post::find()->where('id=:id AND '. $where, array('id'=>$id))->one();
+					$this->_model=Post::find()->where('id=:id', array(':id'=>$id))->andWhere($where)->one();
 				}
 			}
 			if($this->_model===null)
