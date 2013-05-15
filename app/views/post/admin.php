@@ -61,6 +61,6 @@ $this->registerJs($deleteJS);
 	?>
 </table>
 <?php
-echo LinkPager::widget($this, array('pagination'=>$pagination));
+echo LinkPager::widget(array('pagination'=>$pagination));
 ?>
 

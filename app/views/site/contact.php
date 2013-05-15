@@ -24,7 +24,7 @@ $this->params['breadcrumbs']=array(
 If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
 </p>
 
-<?php $form=ActiveForm::begin($this, array(
+<?php $form=ActiveForm::begin(array(
 	'options' => array('class' => 'form-horizontal'),
 	'fieldConfig' => array('inputOptions' => array('class' => 'input-xlarge')),
 )); ?>
@@ -37,7 +37,7 @@ If you have business inquiries or other questions, please fill out the following
 		$field = $form->field($model, 'verifyCode');
 		echo $field->begin()
 			. $field->label()
-			. Captcha::widget($this)
+			. Captcha::widget()
 			. Html::activeTextInput($model, 'verifyCode', array('class' => 'input-medium'))
 			. $field->error()
 			. $field->end();

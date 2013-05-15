@@ -14,7 +14,7 @@ $this->params['breadcrumbs']=array(
 
 <p>Please fill out the following form with your login credentials:</p>
 
-<?php $form=ActiveForm::begin($this, array(
+<?php $form=ActiveForm::begin(array(
 	'id'=>'login-form',
 	'options' => array('class' => 'form-horizontal')
 )); ?>

@@ -6,7 +6,7 @@ use \yii\widgets\ActiveForm;
 use app\models\Lookup;
 ?>
 
-<?php $form = ActiveForm::begin($this, array(
+<?php $form = ActiveForm::begin(array(
 	'options' => array('class' => 'form-horizontal'),
 	'fieldConfig' => array('inputOptions' => array('class' => 'input-xlarge')),
 )); ?>
