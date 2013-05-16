@@ -4,6 +4,7 @@ use \yii\web\Pagination;
 
 use app\models\Post;
 use app\models\Comment;
+use app\models\Tag;
 
 class PostController extends Controller
 {
@@ -121,6 +122,16 @@ class PostController extends Controller
 				'models' => $models,
 				'pagination' => $pagination,
 			));
+	}
+
+	public function actionSuggestTags($q='',$limit=20, $timestamp=0)
+	{
+		if(($keyword=trim($q))!=='')
+		{
+			$tags=Tag::suggestTags($keyword);
+			if($tags!==array())
+				echo implode("\n",$tags);
+		}
 	}
 
 	/**
