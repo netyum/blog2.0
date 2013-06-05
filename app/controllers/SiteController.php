@@ -1,4 +1,5 @@
 <?php
+namespace app\controllers;
 use \Yii;
 use \yii\web\Controller;
 
@@ -34,8 +35,10 @@ class SiteController extends Controller
 	 */
 	public function actionError()
 	{
-	    if($error=Yii::$app->errorHandler->error)
+var_dump(Yii::$app->errorHandler->exception->getMessage());exit;
+	    if($error=Yii::$app->errorHandler->exception->message)
 	    {
+		var_dump($error);exit;
 	    	if(Yii::$app->request->isAjaxRequest)
 	    		echo $error['message'];
 	    	else
