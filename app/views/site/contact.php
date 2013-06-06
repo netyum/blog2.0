@@ -33,15 +33,9 @@ If you have business inquiries or other questions, please fill out the following
 	<?php echo $form->field($model,'email')->textInput(); ?>
 	<?php echo $form->field($model,'subject')->textInput(array('size'=>60,'maxlength'=>128)); ?>
 	<?php echo $form->field($model,'body')->textArea(array('rows' => 6, 'cols'=>50)); ?>
-	<?php
-		$field = $form->field($model, 'verifyCode');
-		echo $field->begin()
-			. $field->label()
-			. Captcha::widget()
-			. Html::activeTextInput($model, 'verifyCode', array('class' => 'input-medium'))
-			. $field->error()
-			. $field->end();
-	?>
+	<?php echo $form->field($model, 'verifyCode')->widget(Captcha::className(), array(
+		'options' => array('class' => 'input-medium'),
+	)); ?>
 	<div class="form-actions">
 		<?php echo Html::submitButton('Submit', null, null, array('class' => 'btn btn-primary')); ?>
 	</div>
