@@ -15,11 +15,11 @@ $this->beginContent('@app/views/layouts/main.php'); ?>
       <?php if(!Yii::$app->user->isGuest) echo UserMenu::widget(); ?>
 	
       <?php echo TagCloud::widget(array(
-          'maxTags'=>Yii::$app->params['tagCloudCount'],
+          'maxTags'=>10, // TODO: Module->params['tagCloudCount'],
       )); ?>
 
       <?php echo RecentComments::widget(array(
-          'maxComments'=>Yii::$app->params['recentCommentCount'],
+          'maxComments'=>10, // TODO: Yii::$app->params['recentCommentCount'],
       )); ?>
     </div>
   </div>

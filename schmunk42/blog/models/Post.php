@@ -102,7 +102,7 @@ class Post extends ActiveRecord
 	 */
 	public function addComment($comment)
 	{
-		if(Yii::$app->params['commentNeedApproval'])
+		if(true) // TODO: reimplement Yii::$app->params['commentNeedApproval']
 			$comment->status=Comment::STATUS_PENDING;
 		else
 			$comment->status=Comment::STATUS_APPROVED;
