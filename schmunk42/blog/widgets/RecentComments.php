@@ -16,6 +16,6 @@ class RecentComments extends Portlet
 
 	protected function renderContent()
 	{
-		echo $this->render('@app/widgets/views/recentComments');
+		echo $this->render('recentComments');
 	}
 }
