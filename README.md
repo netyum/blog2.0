@@ -17,13 +17,14 @@ This extension is based on [the great work of netyum](https://github.com/netyum/
 
 ## Get started!
 
-1. [Download Yii 2 Phundament development branch](https://github.com/schmunk42/yii2/tree/phundament) from GitHub, extract and go to `apps/advanced`
+1. [Download Yii 2 Phundament development branch](https://github.com/schmunk42/yii2/tree/phundament) and extract 
+   or clone  `git clone -b phundament https://github.com/schmunk42/yii2.git` from GitHub, and go to `apps/advanced`
 
 2. Make sure you've the latest [composer](http://getcomposer.org/download/) version.
 
 3. Bootstrap project `php composer.phar create-project` and `./init`
 
-4. Adjust your database connection in `apps/advanced/common/config/params.php`
+4. Adjust your database connection in `./common/config/params.php`
 
 5. Run migrations (2 steps): 
     `./yii migrate`
