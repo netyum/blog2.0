@@ -35,7 +35,8 @@ class TagCloud extends Portlet
 			if (isset($this->_labels[$weight])) {
 				$class .=$this->_labels[$weight];
 			}
-			echo Html::a(Html::encode($tag), array('post/index','tag'=>$tag), array('class'=>$class))."\n";
+			// TODO: controller route
+			echo Html::a(Html::encode($tag), array('blog/post/index','tag'=>$tag), array('class'=>$class))."\n";
 		}
 	}
 }

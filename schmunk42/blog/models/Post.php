@@ -44,7 +44,7 @@ class Post extends ActiveRecord
 
 	
 	public function getAuthor() {
-		return $this->hasOne('User', array('id' => 'author_id'));
+		return $this->hasOne('\common\models\User', array('id' => 'author_id'));
 	}
 	
 	/**
@@ -69,7 +69,8 @@ class Post extends ActiveRecord
 	 */
 	public function getUrl()
 	{
-		return Yii::$app->controller->createUrl('post/view', array(
+		// TODO: do not hardcode route
+		return Yii::$app->controller->createUrl('blog/post/view', array(
 			'id'=>$this->id,
 			'title'=>$this->title,
 		));
