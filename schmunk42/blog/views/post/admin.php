@@ -2,7 +2,7 @@
 use \yii\helpers\Html;
 use \yii\widgets\LinkPager;
 
-use app\models\Lookup;
+use schmunk42\blog\models\Lookup;
 
 $this->params['breadcrumbs']=array(
 	'Manage Posts',

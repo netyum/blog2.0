@@ -1,5 +1,5 @@
 <?php
-namespace app\models;
+namespace schmunk42\blog\models;
 use \yii\db\ActiveRecord;
 use \yii\helpers\Html;
 

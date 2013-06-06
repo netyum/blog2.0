@@ -1,9 +1,9 @@
 <?php
-namespace app\widgets;
+namespace schmunk42\blog\widgets;
 use \yii\helpers\Html;
 
-use app\widgets\Portlet;
-use app\models\Tag;
+use schmunk42\blog\widgets\Portlet;
+use schmunk42\blog\models\Tag;
 
 class TagCloud extends Portlet
 {

@@ -1,9 +1,9 @@
 <?php
 use \Yii;
 
-use app\widgets\UserMenu;
-use app\widgets\TagCloud;
-use app\widgets\RecentComments;
+use schmunk42\blog\widgets\UserMenu;
+use schmunk42\blog\widgets\TagCloud;
+use schmunk42\blog\widgets\RecentComments;
 
 $this->beginContent('@app/views/layouts/main.php'); ?>
 <div class="container-fluid">

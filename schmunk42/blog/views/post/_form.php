@@ -3,7 +3,7 @@ use \yii\helpers\Html;
 
 use \yii\widgets\ActiveForm;
 
-use app\models\Lookup;
+use schmunk42\blog\models\Lookup;
 ?>
 
 <?php $form = ActiveForm::begin(array(

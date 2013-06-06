@@ -1,5 +1,5 @@
 <?php
-namespace app\widgets;
+namespace schmunk42\blog\widgets;
 
 use \yii\helpers\Html;
 use \yii\base\Widget;

@@ -1,13 +1,13 @@
 <?php
-namespace app\controllers;
+namespace schmunk42\blog\controllers;
 use \Yii;
 use \yii\web\Controller;
 
 use \yii\web\CaptchaAction;
-use app\actions\ViewAction;
+use schmunk42\blog\actions\ViewAction;
 
-use app\models\ContactForm;
-use app\models\LoginForm;
+use schmunk42\blog\models\ContactForm;
+use schmunk42\blog\models\LoginForm;
 
 class SiteController extends Controller
 {

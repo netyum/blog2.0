@@ -1,8 +1,8 @@
 <?php
-namespace app\widgets;
+namespace schmunk42\blog\widgets;
 
-use app\widgets\Portlet;
-use app\models\Comment;
+use schmunk42\blog\widgets\Portlet;
+use schmunk42\blog\models\Comment;
 
 class RecentComments extends Portlet
 {

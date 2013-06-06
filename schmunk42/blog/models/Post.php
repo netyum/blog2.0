@@ -1,10 +1,11 @@
 <?php
-namespace app\models;
+namespace schmunk42\blog\models;
+use \common\models\User;
 use \yii\db\ActiveRecord;
 use \yii\helpers\Html;
 use \Yii;
 
-use app\models\Comment;
+use schmunk42\blog\models\Comment;
 
 class Post extends ActiveRecord
 {

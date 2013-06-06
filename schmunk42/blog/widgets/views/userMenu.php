@@ -1,6 +1,6 @@
 <?php
 use \yii\helpers\Html;
-use app\models\Comment;
+use schmunk42\blog\models\Comment;
 ?>
 <ul class="unstyled">
 	<li><?php echo Html::a('Create New Post',array('post/create')); ?></li>

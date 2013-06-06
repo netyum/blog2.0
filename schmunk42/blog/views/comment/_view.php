@@ -1,6 +1,6 @@
 <?php
 use \yii\helpers\Html;
-use app\models\Comment;
+use schmunk42\blog\models\Comment;
 
 $deleteJS = <<<DEL
 $('.container').on('click','.op a.delete',function() {

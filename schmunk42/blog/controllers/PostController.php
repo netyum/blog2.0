@@ -1,11 +1,11 @@
 <?php
-namespace app\controllers;
+namespace schmunk42\blog\controllers;
 use \yii\web\Controller;
-use \yii\web\Pagination;
+use \yii\data\Pagination;
 
-use app\models\Post;
-use app\models\Comment;
-use app\models\Tag;
+use schmunk42\blog\models\Post;
+use schmunk42\blog\models\Comment;
+use schmunk42\blog\models\Tag;
 
 class PostController extends Controller
 {
@@ -52,7 +52,7 @@ class PostController extends Controller
 	{
 		$model=new Post();
 		if ($this->populate($_POST, $model) && $model->save()) {
-			Yii::$app->response->redirect(array('view','id'=>$model->id));
+			\Yii::$app->response->redirect(array('view','id'=>$model->id));
 		}
 
 		echo $this->render('create',array(
@@ -145,7 +145,7 @@ class PostController extends Controller
 		{
 			if(!empty($id))
 			{
-				if(Yii::$app->user->isGuest)
+				if(\Yii::$app->user->isGuest)
 					$where='status='.Post::STATUS_PUBLISHED.' OR status='.Post::STATUS_ARCHIVED;
 				else
 					$where='';
@@ -169,8 +169,8 @@ class PostController extends Controller
 		if($this->populate($_POST, $comment) && $post->addComment($comment))
 		{
 			if($comment->status==Comment::STATUS_PENDING)
-				Yii::$app->session->setFlash('commentSubmitted','Thank you for your comment. Your comment will be posted once it is approved.');
-			Yii::$app->response->refresh();
+				\Yii::$app->session->setFlash('commentSubmitted','Thank you for your comment. Your comment will be posted once it is approved.');
+			\Yii::$app->response->refresh();
 		}
 		return $comment;
 	}
