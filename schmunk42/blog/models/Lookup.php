@@ -1,17 +1,11 @@
 <?php
-namespace app\models;
+namespace schmunk42\blog\models;
 use \yii\db\ActiveRecord;
 
 class Lookup extends ActiveRecord
 {
 	private static $_items=array();
 
-
-	public static function tableName()
-	{
-		return '{{%lookup}}';
-	}
-	
 	/**
 	 * Returns the items for the specified type.
 	 * @param string item type (e.g. 'PostStatus').

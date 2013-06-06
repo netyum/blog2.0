@@ -1,15 +1,10 @@
 <?php
-namespace app\models;
+namespace schmunk42\blog\models;
 use \Yii;
 use \yii\db\ActiveRecord;
 
 class Tag extends ActiveRecord
 {
-
-	public static function tableName()
-	{
-		return '{{%tag}}';
-	}
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -102,7 +97,7 @@ class Tag extends ActiveRecord
 		
 		if (count($tags) >0) {
 			$inTags = preg_replace('/(\S+)/i', '\'\1\'', $tags);
-			$sql = "UPDATE {{%tag}} SET frequency=frequency+1 WHERE name IN (". join(",", $inTags) .' ) ';
+			$sql = "UPDATE ".Tag::tableName()." SET frequency=frequency+1 WHERE name IN (". join(",", $inTags) .' ) ';
 			Yii::$app->db->createCommand($sql)->execute();
 		
 			foreach($tags as $name) {

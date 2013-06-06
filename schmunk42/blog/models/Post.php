@@ -15,11 +15,6 @@ class Post extends ActiveRecord
 
 	private $_oldTags;
 
-	public static function tableName()
-	{
-		return '{{%post}}';
-	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */

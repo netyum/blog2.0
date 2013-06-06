@@ -8,11 +8,6 @@ class Comment extends ActiveRecord
 	const STATUS_PENDING=1;
 	const STATUS_APPROVED=2;
 
-	public static function tableName()
-	{
-		return '{{%comment}}';
-	}
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */
