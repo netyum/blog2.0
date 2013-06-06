@@ -29,7 +29,8 @@ This extension is based on [the great work of netyum](https://github.com/netyum/
     `./yii migrate`
     `./yii migrate --migrationPath=@vendor/schmunk42/yii2-blog/schmunk42/blog/migrations`
 
-6. Open `http://yii2-advanced/frontend/www/index.php?r=blog/post`
+6. Open `http://yii2-advanced/frontend/www/index.php?r=blog/post` to view posts.
+7. Open `http://yii2-advanced/frontend/www/index.php?r=blog/post/create` to create posts (login: demo / demo)
 
 ## TODOs
 
