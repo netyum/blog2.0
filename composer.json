@@ -6,6 +6,11 @@
             "email": "schmunk@usrbin.de"
         }
     ],
+    "autoload": {
+        "psr-0": {
+            "schmunk42\\blog": "./"
+        }
+    },
     "require": {
 
     }
