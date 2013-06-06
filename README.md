@@ -5,22 +5,34 @@ yii2-blog
 
 **DO NOT USE FOR PRODUCTION!** Go to [phundament.com](http://phundament.com) if need a production ready system.
 
-This extension is based on [great work of netyum](https://github.com/netyum/blog2.0/).
+This extension is based on [the great work of netyum](https://github.com/netyum/blog2.0/).
 
-## Deployment
+## Notices
 
-```
-php composer.phar self-update
-php composer.phar create-project yiisoft/yii2-app-advanced
-php composer.phar require schmunk42/yii2-blog:dev-master
+*Several glitches ahead!*
 
-./yii migrate --migrationPath=@vendor/schmunk42/yii2-blog/schmunk42/blog/migrations
-```
+ * only tested in yii2-advanced and with MySQL so far
+ * issues with controller routes
+ * ...
 
-## Test it!
+## Get started!
 
-*Note: Several glitches ahead!*
+1. Download Yii 2 development fork from [GitHub](https://github.com/schmunk42/yii2/archive/testing-extensions.zip), extract and go to `apps/advanced`
 
-Only tested in yii2-advanced so far.
+2. Adjust your database connection in `apps/advanced/common/config/params.php`
 
-Open `http://yii2-advanced/frontend/www/index.php?r=blog/post`
+3. Make sure you've the latest [composer](http://getcomposer.org/download/) version.
+
+4. Bootstrap project `php composer.phar create-project`
+
+5. Run migrations (2 steps): 
+    `./yii migrate`
+    `./yii migrate --migrationPath=@vendor/schmunk42/yii2-blog/schmunk42/blog/migrations`
+
+6. Open `http://yii2-advanced/frontend/www/index.php?r=blog/post`
+
+## TODOs
+
+* automatic detection of migrations
+* automatic detection of module(?)
+* ...
