@@ -1,0 +1,12 @@
+{
+    "name": "schmunk42/yii2-blog",
+    "authors": [
+        {
+            "name": "Tobias Munk",
+            "email": "schmunk@usrbin.de"
+        }
+    ],
+    "require": {
+
+    }
+}
