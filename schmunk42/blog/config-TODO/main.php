@@ -19,7 +19,7 @@ return array(
 		),
 		'user' => array(
 			'class' => 'yii\web\User',
-			'identityClass' => 'app\components\UserIdentity',
+			'identityClass' => 'schmunk42\blog\components\UserIdentity',
 		),
 		'assetManager' => array(
  			'bundles' => require(__DIR__ . '/assets.php'),
