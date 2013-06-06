@@ -17,7 +17,7 @@ This extension is based on [the great work of netyum](https://github.com/netyum/
 
 ## Get started!
 
-1. [Download Yii 2 development fork](https://github.com/schmunk42/yii2/archive/testing-extensions.zip) from GitHub, extract and go to `apps/advanced`
+1. [Download Yii 2 development fork](https://github.com/schmunk42/yii2/tree/testing-extensions) from GitHub, extract and go to `apps/advanced`
 
 2. Adjust your database connection in `apps/advanced/common/config/params.php`
 
