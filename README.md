@@ -1,23 +1,26 @@
-blog2.0
-=======
+yii2-blog
+=========
 
-The project is blog for yii 2.0 public preview
+*This is an extension to test package integration in Yii 2*
+
+**DO NOT USE FOR PRODUCTION!** Go to [phundament.com](http://phundament.com) if need a production ready system.
+
+This extension is based on [great work of netyum](https://github.com/netyum/blog2.0/).
 
 ## Deployment
 
-1. webserver document_root is www/
-2. modify www/index.php on line 
 ```
-require 'yii2/framework/yii.php';
+php composer.phar self-update
+php composer.phar create-project yiisoft/yii2-app-advanced
+php composer.phar require schmunk42/yii2-blog:dev-master
+
+./yii migrate --migrationPath=@vendor/schmunk42/yii2-blog/schmunk42/blog/migrations
 ```
- as  framework absolute or relative(www) path.
 
+## Test it!
 
-Completed this project, contributed 7 bugs, [#77](https://github.com/yiisoft/yii2/issues/77), [#80](https://github.com/yiisoft/yii2/issues/80), [#90](https://github.com/yiisoft/yii2/issues/90), [#105](https://github.com/yiisoft/yii2/issues/105), [#110](https://github.com/yiisoft/yii2/issues/110), [#124](https://github.com/yiisoft/yii2/issues/124), [#177](https://github.com/yiisoft/yii2/issues/177).
+*Note: Several glitches ahead!*
 
-Welcome your test.
+Only tested in yii2-advanced so far.
 
-
-## Preview
-
-http://110.76.45.201/
+Open `http://yii2-advanced/frontend/www/index.php?r=blog/post`
