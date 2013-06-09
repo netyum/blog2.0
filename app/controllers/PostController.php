@@ -1,7 +1,7 @@
 <?php
 namespace app\controllers;
 use \yii\web\Controller;
-use \yii\web\Pagination;
+use \yii\data\Pagination;
 
 use app\models\Post;
 use app\models\Comment;
