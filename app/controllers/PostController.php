@@ -1,5 +1,7 @@
 <?php
 namespace app\controllers;
+
+use \Yii;
 use \yii\web\Controller;
 use \yii\data\Pagination;
 
@@ -149,7 +151,6 @@ class PostController extends Controller
 					$where='status='.Post::STATUS_PUBLISHED.' OR status='.Post::STATUS_ARCHIVED;
 				else
 					$where='';
-					
 				if ($where == '') {
 					$this->_model=Post::find($id);
 				}
