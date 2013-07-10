@@ -44,7 +44,7 @@ class PostController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$comment=$this->newComment($model);
-		echo $this->render('view',array(
+		return $this->render('view',array(
 			'model'=>$model,
 			'comment'=>$comment,
 		));
@@ -53,11 +53,11 @@ class PostController extends Controller
 	public function actionCreate()
 	{
 		$model=new Post();
-		if ($this->populate($_POST, $model) && $model->save()) {
+		if ($model->load($_POST) && $model->save()) {
 			Yii::$app->response->redirect(array('view','id'=>$model->id));
 		}
 
-		echo $this->render('create',array(
+		return $this->render('create',array(
 			'model'=>$model,
 		));
 	}
@@ -65,11 +65,11 @@ class PostController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		if ($this->populate($_POST, $model) && $model->save()) {
+		if ($model->load($_POST) && $model->save()) {
 			Yii::$app->response->redirect(array('view','id'=>$model->id));
 		}
 
-		echo $this->render('update',array(
+		return $this->render('update',array(
 			'model'=>$model,
 		));
 	}
@@ -92,14 +92,13 @@ class PostController extends Controller
 		if (!empty($tag))
 			$query->andWhere(array('like', 'tags', '%'.$tag.'%'));
 		$countQuery = clone $query;
-		$pagination = new Pagination($countQuery->count());
+		$pagination = new Pagination(array('itemCount' => $countQuery->count()));
 
 		$models = $query->offset($pagination->offset)
 				->limit($pagination->limit)
 				->with('comments', 'author')
 				->all();
-
-		echo $this->render('index', array(
+		return $this->render('index', array(
 				'models' => $models,
 				'pagination' => $pagination,
 			));
@@ -115,25 +114,25 @@ class PostController extends Controller
 			->orderBy('create_time DESC');
 
 		$countQuery = clone $query;
-		$pagination = new Pagination($countQuery->count());
+		$pagination = new Pagination(array('itemCount' => $countQuery->count()));
 		
 		$models = $query->offset($pagination->offset)
 				->limit($pagination->limit)
 				->all();
 
-		echo $this->render('admin', array(
+		return $this->render('admin', array(
 				'models' => $models,
 				'pagination' => $pagination,
 			));
 	}
 
-	public function actionSuggestTags($q='',$limit=20, $timestamp=0)
+	public function actionSuggestTags($term='',$limit=20, $timestamp=0)
 	{
-		if(($keyword=trim($q))!=='')
+		if(($keyword=trim($term))!=='')
 		{
 			$tags=Tag::suggestTags($keyword);
 			if($tags!==array())
-				echo implode("\n",$tags);
+				echo json_encode($tags);
 		}
 	}
 
@@ -167,7 +166,7 @@ class PostController extends Controller
 	protected function newComment($post)
 	{
 		$comment=new Comment();
-		if($this->populate($_POST, $comment) && $post->addComment($comment))
+		if($model->load($_POST) && $post->addComment($comment))
 		{
 			if($comment->status==Comment::STATUS_PENDING)
 				Yii::$app->session->setFlash('commentSubmitted','Thank you for your comment. Your comment will be posted once it is approved.');

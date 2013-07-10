@@ -33,6 +33,11 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),  
 		),
+	//	'errorHandler'=>array(
+	//		'class' => 'yii\base\ErrorHandler',
+			// use 'site/error' action to display errors
+	//		'errorAction'=>'site/error',
+	//	),
 		'db' => array(
 			'class' => 'yii\db\Connection',
 			'dsn' => 'mysql:host=localhost;dbname=blog',
@@ -43,12 +48,11 @@ return array(
 			'enableSchemaCache'=> !YII_DEBUG,
 		),
 		'log'=>array(
-			'class'=>'yii\logging\Router',
 			'targets'=>array(
 				'file' => array(
-					'class'=>'yii\logging\FileTarget',
- 					'levels'=> array('error', 'warning'),
-					'categories' => array('yii\*'),
+					'class'=>'yii\log\FileTarget',
+ 					'levels'=> array('trace', 'error', 'warning'),
+					'categories' => array('yii\db\*'),
 				),  
 				// uncomment the following to show log messages on web pages
 				/*'web' => array(

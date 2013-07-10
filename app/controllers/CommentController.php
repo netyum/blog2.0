@@ -1,5 +1,6 @@
 <?php
 namespace app\controllers;
+
 use \Yii;
 use \yii\web\Controller;
 use \yii\data\Pagination;
@@ -40,10 +41,10 @@ class CommentController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-		if ($this->populate($_POST, $model) && $model->save()) {
+		if ($model->load($_POST) && $model->save()) {
 			Yii::$app->response->redirect(array('index'));
 		}
-		echo $this->render('update',array(
+		return $this->render('update',array(
 			'model'=>$model,
 		));
 	}
@@ -75,14 +76,14 @@ class CommentController extends Controller
 		$query = Comment::find()->orderBy('status, create_time DESC');
 
 		$countQuery = clone $query;
-		$pagination = new Pagination($countQuery->count());
+		$pagination = new Pagination(array('itemCount' => $countQuery->count()));
 
 		$models = $query->offset($pagination->offset)
 				->limit($pagination->limit)
 				->with('post')
 				->all();
 
-		echo $this->render('index',array(
+		return $this->render('index',array(
 			'models'=>$models,
 			'pagination'=>$pagination
 		));
