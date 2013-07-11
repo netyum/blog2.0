@@ -33,11 +33,11 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),  
 		),
-	//	'errorHandler'=>array(
-	//		'class' => 'yii\base\ErrorHandler',
+		'errorHandler'=>array(
+			'class' => 'yii\base\ErrorHandler',
 			// use 'site/error' action to display errors
-	//		'errorAction'=>'site/error',
-	//	),
+			'errorAction'=>'site/error',
+		),
 		'db' => array(
 			'class' => 'yii\db\Connection',
 			'dsn' => 'mysql:host=localhost;dbname=blog',

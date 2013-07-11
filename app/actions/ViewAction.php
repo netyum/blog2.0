@@ -80,7 +80,7 @@ class ViewAction extends Action
 	 * Resolves the user-specified view into a valid view name.
 	 * @param string $viewPath user-specified view in the format of 'path.to.view'.
 	 * @return string fully resolved view in the format of 'path/to/view'.
-	 * @throw CHttpException if the user-specified view is invalid
+	 * @throw \yii\web\HttpException if the user-specified view is invalid
 	 */
 	protected function resolveView($viewPath)
 	{
@@ -92,13 +92,13 @@ class ViewAction extends Action
 			$this->view=$view;
 			return false;	
 		}
-		throw new \yii\base\HttpException(404,'The requested view "'. $viewPath .'" was not found.');
+		throw new \yii\web\HttpException(404,'The requested view "'. $viewPath .'" was not found.');
 	}
 
 	/**
 	 * Runs the action.
 	 * This method displays the view requested by the user.
-	 * @throws CHttpException if the view is invalid
+	 * @throws \yii\web\HttpException if the view is invalid
 	 */
 	public function run()
 	{

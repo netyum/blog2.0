@@ -166,7 +166,7 @@ class PostController extends Controller
 	protected function newComment($post)
 	{
 		$comment=new Comment();
-		if($model->load($_POST) && $post->addComment($comment))
+		if($comment->load($_POST) && $post->addComment($comment))
 		{
 			if($comment->status==Comment::STATUS_PENDING)
 				Yii::$app->session->setFlash('commentSubmitted','Thank you for your comment. Your comment will be posted once it is approved.');
